@@ -4,13 +4,13 @@
 function chart(csvpath, color, section, formatData) {
 
     if (color == "blue") {
-        colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
+        colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6", "#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
     }
     else if (color == "pink") {
-        colorrange = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6"];
+        colorrange = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6", "#D4B9DA", "#F1EEF6", "#D4B9DA", "#F1EEF6"];
     }
     else if (color == "orange") {
-        colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
+        colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9", "#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
     }
     strokecolor = colorrange[0];
 
@@ -77,7 +77,9 @@ function chart(csvpath, color, section, formatData) {
             .data(layers)
             .enter().append("path")
             .attr("class", "layer")
-            .attr("d", function(d) { return area(d.values); })
+            .attr("d", function(d) {
+                return area(d.values);
+            })
             .style("fill", function(d, i) { return z(i); });
 
 
